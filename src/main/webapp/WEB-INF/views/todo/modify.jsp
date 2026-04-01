@@ -100,7 +100,8 @@
                 document.querySelector(".btn-danger").addEventListener("click",function (e) {
                   e.preventDefault()
                   e.stopPropagation()
-                  formObj.action ="/todo/remove"
+                  // formObj.action ="/todo/remove"`
+                  formObj.action= `/todo/remove?${pageRequestDTO.link}`
                   formObj.method = "post"
                   formObj.submit()
                 },false)
@@ -111,6 +112,7 @@
                   e.stopPropagation()
                   formObj.action ="/todo/modify"
                   formObj.method = "post"
+
                   formObj.submit()
                   <%--self.location="/todo/modify?tno="+${dto.tno}--%>
                 }, false)
@@ -118,7 +120,7 @@
                 document.querySelector(".btn-secondary").addEventListener("click", function (e) {
                   e.preventDefault()
                   e.stopPropagation()
-                  self.location="/todo/list"
+                  self.location=`/todo/list?${pageRequestDTO.link}`
                 }, false)
             </script>
 
